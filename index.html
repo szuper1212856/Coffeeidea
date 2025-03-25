@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Coffee Generator</title>
+    <title>Jövőbeli Kávé Generátor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,25 +46,31 @@
     </style>
 </head>
 <body>
-    <h1>Futuristic Coffee Generator</h1>
+    <h1>Kávé Generátor Cintia néninek</h1>
     <div class="container">
-        <label for="mood">How is your day?</label>
+        <label for="mood">Hogy érzi ma magát?</label>
         <select id="mood">
-            <option value="great">Great</option>
-            <option value="okay">Okay</option>
-            <option value="tired">Tired</option>
-            <option value="stressed">Stressed</option>
+            <option value="energikus">Energikus</option>
+            <option value="fáradt">Fáradt</option>
+            <option value="stresszes">Stresszes</option>
         </select>
         <br>
-        <label for="weather">What's the weather?</label>
+        <label for="weather">Milyen az időjárás?</label>
         <select id="weather">
-            <option value="cold">Cold</option>
-            <option value="hot">Hot</option>
-            <option value="rainy">Rainy</option>
-            <option value="cloudy">Cloudy</option>
+            <option value="hideg">Hideg</option>
+            <option value="meleg">Meleg</option>
+            <option value="esős">Esős</option>
+            <option value="felhős">Felhős</option>
         </select>
         <br>
-        <button onclick="generateCoffee()">Generate Coffee Idea</button>
+        <label for="task">Milyen a napi teendő?</label>
+        <select id="task">
+            <option value="sokat kell tanítani">Sokat kell tanítani</option>
+            <option value="könnyű nap">Könnyű nap</option>
+            <option value="értekezlet van">Értekezlet van</option>
+        </select>
+        <br>
+        <button onclick="generateCoffee()">Generálj Kávét</button>
         <div class="result" id="coffeeResult"></div>
     </div>
 
@@ -72,21 +78,20 @@
         function generateCoffee() {
             let mood = document.getElementById("mood").value;
             let weather = document.getElementById("weather").value;
+            let task = document.getElementById("task").value;
             let coffee = "";
 
-            if (mood === "great" && weather === "cold") {
-                coffee = "A rich, warm Mocha to keep your energy high!";
-            } else if (mood === "okay" && weather === "hot") {
-                coffee = "An Iced Caramel Latte to refresh your day!";
-            } else if (mood === "tired" && weather === "rainy") {
-                coffee = "A strong Espresso to wake you up!";
-            } else if (mood === "stressed" && weather === "cloudy") {
-                coffee = "A soothing Vanilla Cappuccino to calm your mind!";
+            if (mood === "fáradt" && weather === "hideg" && task === "sokat kell tanítani") {
+                coffee = "Erős feketekávé mandulatejjel!";
+            } else if (mood === "stresszes" && weather === "felhős") {
+                coffee = "Nyugtató koffeinmentes latte fahéjjal!";
+            } else if (mood === "energikus" && task === "könnyű nap") {
+                coffee = "Egy finom jeges amerikai kávé!";
             } else {
-                coffee = "A classic Americano – always a good choice!";
+                coffee = "Egy klasszikus eszpresszó, cukor nélkül!";
             }
 
-            document.getElementById("coffeeResult").innerHTML = "Your coffee: " + coffee;
+            document.getElementById("coffeeResult").innerHTML = "Ajánlott kávé: " + coffee;
         }
     </script>
 </body>
