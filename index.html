@@ -52,7 +52,6 @@
         <select id="mood">
             <option value="energikus">Energikus</option>
             <option value="fáradt">Fáradt</option>
-            <option value="stresszes">Stresszes</option>
         </select>
         <br>
         <label for="weather">Milyen az időjárás?</label>
@@ -68,6 +67,8 @@
             <option value="sokat kell tanítani">Sokat kell tanítani</option>
             <option value="könnyű nap">Könnyű nap</option>
             <option value="értekezlet van">Értekezlet van</option>
+            <option value="dolgozatot kell íratnom">Dolgozatot kell íratnom</option>
+            <option value="dolgozatokat kell javítanom">Dolgozatokat kell javítanom</option>
         </select>
         <br>
         <button onclick="generateCoffee()">Generálj Kávét</button>
@@ -83,10 +84,12 @@
 
             if (mood === "fáradt" && weather === "hideg" && task === "sokat kell tanítani") {
                 coffee = "Erős feketekávé mandulatejjel!";
-            } else if (mood === "stresszes" && weather === "felhős") {
-                coffee = "Nyugtató koffeinmentes latte fahéjjal!";
             } else if (mood === "energikus" && task === "könnyű nap") {
                 coffee = "Egy finom jeges amerikai kávé!";
+            } else if (task === "dolgozatokat kell javítanom") {
+                coffee = "Egy hosszan tartó hatású cappuccino, cukor nélkül!";
+            } else if (task === "dolgozatot kell íratnom") {
+                coffee = "Egy koncentrációt segítő dupla eszpresszó!";
             } else {
                 coffee = "Egy klasszikus eszpresszó, cukor nélkül!";
             }
