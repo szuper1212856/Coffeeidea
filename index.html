@@ -82,14 +82,18 @@
             let task = document.getElementById("task").value;
             let coffee = "";
 
-            if (mood === "fáradt" && weather === "hideg" && task === "sokat kell tanítani") {
-                coffee = "Erős feketekávé mandulatejjel!";
-            } else if (mood === "energikus" && task === "könnyű nap") {
-                coffee = "Egy finom jeges amerikai kávé!";
-            } else if (task === "dolgozatokat kell javítanom") {
-                coffee = "Egy hosszan tartó hatású cappuccino, cukor nélkül!";
+            if (mood === "energikus" && weather === "hideg" && task === "sokat kell tanítani") {
+                coffee = "Ristretto";
+            } else if (mood === "fáradt" && weather === "hideg" && task === "sokat kell tanítani") {
+                coffee = "Erős eszpresszó";
+            } else if (mood === "energikus" && weather === "meleg" && task === "sokat kell tanítani") {
+                coffee = "Jeges kávé";
+            } else if (mood === "fáradt" && weather === "felhős") {
+                coffee = "Mandulás cappuccino";
             } else if (task === "dolgozatot kell íratnom") {
-                coffee = "Egy koncentrációt segítő dupla eszpresszó!";
+                coffee = "Karamellás café latte";
+            } else if (task === "dolgozatokat kell javítanom") {
+                coffee = "Hosszú kávé tejszínnel, cukormentesen";
             } else {
                 coffee = "Egy klasszikus eszpresszó, cukor nélkül!";
             }
