@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Coffee Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        select, button {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+        button {
+            background: #00e5ff;
+            font-weight: bold;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Futuristic Coffee Generator</h1>
+    <div class="container">
+        <label for="mood">How is your day?</label>
+        <select id="mood">
+            <option value="great">Great</option>
+            <option value="okay">Okay</option>
+            <option value="tired">Tired</option>
+            <option value="stressed">Stressed</option>
+        </select>
+        <br>
+        <label for="weather">What's the weather?</label>
+        <select id="weather">
+            <option value="cold">Cold</option>
+            <option value="hot">Hot</option>
+            <option value="rainy">Rainy</option>
+            <option value="cloudy">Cloudy</option>
+        </select>
+        <br>
+        <button onclick="generateCoffee()">Generate Coffee Idea</button>
+        <div class="result" id="coffeeResult"></div>
+    </div>
+
+    <script>
+        function generateCoffee() {
+            let mood = document.getElementById("mood").value;
+            let weather = document.getElementById("weather").value;
+            let coffee = "";
+
+            if (mood === "great" && weather === "cold") {
+                coffee = "A rich, warm Mocha to keep your energy high!";
+            } else if (mood === "okay" && weather === "hot") {
+                coffee = "An Iced Caramel Latte to refresh your day!";
+            } else if (mood === "tired" && weather === "rainy") {
+                coffee = "A strong Espresso to wake you up!";
+            } else if (mood === "stressed" && weather === "cloudy") {
+                coffee = "A soothing Vanilla Cappuccino to calm your mind!";
+            } else {
+                coffee = "A classic Americano – always a good choice!";
+            }
+
+            document.getElementById("coffeeResult").innerHTML = "Your coffee: " + coffee;
+        }
+    </script>
+</body>
+</html>
